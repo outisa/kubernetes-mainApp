@@ -2,7 +2,8 @@ name: Release a new docker image
 
 on:
   push:
-    - master
+    branches:
+      - master
 
 jobs:
   build:
@@ -10,9 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish to Docker hub
-        uses: docker/build-push-action@v1.1.0
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: outisa/main-application
-          tags: latest
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: outisa/main-application
+        tags: latest
