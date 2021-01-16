@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: hashgenerator
-          image: outisa/main-application:b7013358acdf39d86e9c51295dd65ae1b183cf63
+          image: outisa/main-application:7dd3822445fac6d54bc191cca3283321f6f4e77a
