@@ -10,10 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Publish to Docker hub
+    - name: Publish finder to Docker hub
       uses: docker/build-push-action@v1.1.0
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: outisa/main-application
+        repository: outisa/main-application-finder
         tags: ${{ github.sha }}
+        appdir: main-app-finder
+    - name: Publish generator to Docker hub
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: outisa/main-application-generator
+        tags: ${{ github.sha }}
+        appdir: main-app-generator    

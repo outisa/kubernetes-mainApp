@@ -12,6 +12,17 @@ spec:
       labels:
         app: hashgenerator
     spec:
+      volumes:
+        - name: shared string
+          emptyDir: {}
       containers:
-        - name: hashgenerator
-          image: outisa/main-application:b7013358acdf39d86e9c51295dd65ae1b183cf63
+        - name: main-app-finder
+          image: outisa/main-application-finder:b7013358acdf39d86e9c51295dd65ae1b183cf63
+          volumeMounts:
+            - mountPath: /app/files
+              name: shared-logs
+        - name: main-app-generator
+          image: outisa/main-application-generator:latest
+          volumeMounts:
+            - mountPath: /app/files
+              name: shared-logs
