@@ -17,7 +17,7 @@ spec:
           emptyDir: {}
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:368705a684e1cb8bfca985f5e16fcf543b3034f04
+          image: outisa/main-application-finder:368705a684e1cb8bfca985f5e16fcf543b3034f0
           volumeMounts:
             - mountPath: /app/files
               name: shared-logs
