@@ -19,10 +19,11 @@ spec:
         - name: main-app-finder
           image: outisa/main-application-finder:3b55bc22cc71c9edc73698443521d45296cae478
           volumeMounts:
-            - mountPath: /app/files
-              name: shared-logs
+          - name: shared-logs          
+            mountPath: /app/files
         - name: main-app-generator
           image: outisa/main-application-generator:3b55bc22cc71c9edc73698443521d45296cae478
           volumeMounts:
-            - mountPath: /app/files
-              name: shared-logs
+            - name: shared-logs
+              mountPath: /app/files
+
