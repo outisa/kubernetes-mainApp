@@ -1,4 +1,4 @@
-const app = require('../main-app-response/app')
+const app = require('./app')
 const path = require('path')
 const fs = require('fs')
 
