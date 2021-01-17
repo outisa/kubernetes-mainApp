@@ -19,7 +19,7 @@ setInterval(() => {
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
   const stringToSend = `${date}: ${string}`
   console.log(stringToSend)
-  fs.appendFile(pathToFile, stringToSend)
+  fs.appendFileSync(pathToFile, stringToSend)
 }, 5000)
 
 const PORT = process.env.PORT || 3003
