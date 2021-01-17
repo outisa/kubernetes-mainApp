@@ -17,12 +17,12 @@ spec:
           emptyDir: {}
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:f57bdf1d93c0f6bfd089c285192f61175ca0ea41
+          image: outisa/main-application-finder:3b55bc22cc71c9edc73698443521d45296cae478
           volumeMounts:
             - mountPath: /app/files
               name: shared-logs
         - name: main-app-generator
-          image: outisa/main-application-generator:f57bdf1d93c0f6bfd089c285192f61175ca0ea41
+          image: outisa/main-application-generator:3b55bc22cc71c9edc73698443521d45296cae478
           volumeMounts:
             - mountPath: /app/files
               name: shared-logs
