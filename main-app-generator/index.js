@@ -18,8 +18,12 @@ let string = generateHash()
 setInterval(() => {
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
   const stringToSend = `${date}: ${string}`
+  fs.appendFileSync(pathToFile, stringToSend, 'utf8', (err) => { 
+    if (err) { 
+      console.log(err); 
+    }  
+  })
   console.log(stringToSend)
-  fs.appendFileSync(pathToFile, stringToSend, 'utf8')
 }, 5000)
 
 const PORT = process.env.PORT || 3003
