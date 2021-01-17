@@ -13,7 +13,7 @@ spec:
         app: hashgenerator
     spec:
       volumes:
-        - name: shared-string
+        - name: shared-logs
           emptyDir: {}
       containers:
         - name: main-app-finder
