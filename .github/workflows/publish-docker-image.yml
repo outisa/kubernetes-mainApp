@@ -17,7 +17,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: outisa/main-application-finder
         tags: ${{ github.sha }}
-        context: main-app-finder
+        path: main-app-finder
     - name: Publish generator to Docker hub
       uses: docker/build-push-action@v1.1.0
       with:
@@ -25,4 +25,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: outisa/main-application-generator
         tags: ${{ github.sha }}
-        context: main-app-generator    
+        path: main-app-generator    
