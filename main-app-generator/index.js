@@ -16,11 +16,13 @@ const generateHash = () => {
 let string = fs.readFileSync(pathToFile, 'utf-8')
 if (!string) {
   string = generateHash()
-} 
+} else {
+  string = substring(string.indexOf('Z:') + 3)
+}
 
 setInterval(() => {
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
-  const stringToSend = `${date}: ${string} \n`
+  const stringToSend = `${date}: ${string}`
   fs.writeFile(pathToFile, stringToSend, (err) => { 
     if (err) { 
       console.log(err); 
