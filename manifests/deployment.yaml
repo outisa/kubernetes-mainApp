@@ -18,7 +18,7 @@ spec:
             claimName: logs-claim
         - name: shared-pongs
           persistentVolumeClaim:
-            claimName: logs-claim
+            claimName: pongs-claim
       containers:
         - name: main-app-finder
           image: outisa/main-application-finder:7568ac292710104a791a6080b41d53cbbfe99a71
