@@ -21,14 +21,14 @@ spec:
             claimName: pongs-claim
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:91764d52e96271777bcf8780be199cac55822fd2
+          image: outisa/main-application-finder:3be3cf22edd4e9d1f76dc9e2614c80e6aa1ef7d8
           volumeMounts:
           - name: shared-logs          
             mountPath: /app/files
           - name: shared-pongs
             mountPath: /app/pongs
         - name: main-app-generator
-          image: outisa/main-application-generator:91764d52e96271777bcf8780be199cac55822fd2
+          image: outisa/main-application-generator:3be3cf22edd4e9d1f76dc9e2614c80e6aa1ef7d8
           volumeMounts:
             - name: shared-logs
               mountPath: /app/files
