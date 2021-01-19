@@ -17,7 +17,7 @@ let string = fs.readFileSync(pathToFile, 'utf-8')
 if (!string) {
   string = generateHash()
 } else {
-  string = substring(string.indexOf('Z:') + 3)
+  string = string.substring(string.indexOf('Z:') + 3)
 }
 
 setInterval(() => {
