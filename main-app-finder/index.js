@@ -3,12 +3,13 @@ const path = require('path')
 const fs = require('fs')
 
 const directory = path.join('/', 'app', 'files')
-const pathToFile = path.join(directory, 'logs.txt')
+const pathTologs = path.join(directory, 'logs.txt')
+const pathTopPongs = path.join(directory, 'pongs.txt')
 
 app.get('/', (requst, response) => {
-  const stringsToSend = fs.readFileSync(pathToFile, 'utf-8')
-  console.log(stringsToSend) 
-  response.send(stringsToSend)
+  const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
+  const pongs = fs.readFileSync(pathTopPongs, 'utf-8')
+  response.send(`${stringToSend} \n ${pongs}`)
 })
 
 const PORT = process.env.PORT || 3003
