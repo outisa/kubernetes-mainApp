@@ -13,7 +13,10 @@ const generateHash = () => {
   return `${hash1}-${hash2}-${hash3}`
 };
 
-let string = generateHash()
+let string = fs.readFileSync(pathTologs, 'utf-8')
+if (!string) {
+  string = generateHash()
+} 
 
 setInterval(() => {
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;

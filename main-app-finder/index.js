@@ -10,7 +10,7 @@ const pathTopPongs = path.join(directoryPongs, 'pongs.txt')
 app.get('/', (requst, response) => {
   const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
   const pongs = fs.readFileSync(pathTopPongs, 'utf-8')
-  response.send(`${stringToSend} \n ${pongs}`)
+  response.send(`${stringToSend} \r\n Ping / Pongs: ${pongs}`)
 })
 
 const PORT = process.env.PORT || 3003
