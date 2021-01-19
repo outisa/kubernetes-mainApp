@@ -4,7 +4,8 @@ const fs = require('fs')
 
 const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
-const pathTopPongs = path.join(directory, 'pongs.txt')
+const directoryPongs = path.join('/', 'app', 'pongs')
+const pathTopPongs = path.join(directoryPongs, 'pongs.txt')
 
 app.get('/', (requst, response) => {
   const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
