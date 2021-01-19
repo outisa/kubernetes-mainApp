@@ -13,7 +13,7 @@ const generateHash = () => {
   return `${hash1}-${hash2}-${hash3}`
 };
 
-let string = fs.readFileSync(pathTologs, 'utf-8')
+let string = fs.readFileSync(pathToFile, 'utf-8')
 if (!string) {
   string = generateHash()
 } 
