@@ -22,6 +22,8 @@ setInterval(() => {
     } else {
       string = string.substring(string.indexOf('Z:') + 3)
     }
+  } else {
+    string = generateHash()
   }
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
   const stringToSend = `${date}: ${string}`
