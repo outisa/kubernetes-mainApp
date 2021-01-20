@@ -13,14 +13,16 @@ const generateHash = () => {
   return `${hash1}-${hash2}-${hash3}`
 };
 
-let string = fs.readFileSync(pathToFile, 'utf-8')
-if (!string) {
-  string = generateHash()
-} else {
-  string = string.substring(string.indexOf('Z:') + 3)
-}
-
 setInterval(() => {
+  let string = '' 
+  if (fs.existsSync(pathToFile)) {
+    string = fs.readFileSync(pathToFile, 'utf-8')
+    if (!string) {
+      string = generateHash()
+    } else {
+      string = string.substring(string.indexOf('Z:') + 3)
+    }
+  }
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
   const stringToSend = `${date}: ${string}`
   fs.writeFile(pathToFile, stringToSend, (err) => { 
