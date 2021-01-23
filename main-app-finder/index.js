@@ -1,13 +1,19 @@
 const app = require('./app')
 const path = require('path')
 const fs = require('fs')
-const { default: axios } = require('axios')
+const axios= require('axios')
 
 const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
 
 const getPongs = async() => {
-  return await axios.get('http://pingpong-svc/pingpong')
+  let pong = 0
+  try {
+    pong = await axios.get('http://pingpong-svc/pingpong')
+  } catch (error) {
+    console.log(error)
+  }
+  return pong
 }
 
 app.get('/', async (requst, response) => {

@@ -17,6 +17,7 @@ setInterval(() => {
   let string = '' 
   if (fs.existsSync(pathToFile)) {
     string = fs.readFileSync(pathToFile, 'utf-8')
+    console.log(string)
     if (!string) {
       string = generateHash()
     } else {
