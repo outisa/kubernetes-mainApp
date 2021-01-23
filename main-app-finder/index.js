@@ -7,13 +7,13 @@ const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
 
 const getPongs = async() => {
-  let pong = 0
   try {
     pong = await axios.get('http://pingpong-svc/pingpong')
+    console.log(pong)
+    return pong
   } catch (error) {
     console.log(error)
   }
-  return pong
 }
 
 app.get('/', async (requst, response) => {
