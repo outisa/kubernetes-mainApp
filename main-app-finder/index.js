@@ -1,21 +1,18 @@
 const app = require('./app')
 const path = require('path')
 const fs = require('fs')
+const { default: axios } = require('axios')
 
 const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
-const directoryPongs = path.join('/', 'app', 'pongs')
-const pathTopPongs = path.join(directoryPongs, 'pongs.txt')
 
-app.get('/', (requst, response) => {
+const getPongs = async() => {
+  return await axios.get('http://pingpong-svc/pingpong')
+}
+
+app.get('/', async (requst, response) => {
   const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
-  let pongs = 0 
-  if (fs.existsSync(pathTopPongs)) {
-    pongs = fs.readFileSync(pathTopPongs, 'utf-8')
-    if (!pongs) {
-      pongs = 0
-    }
-  }
+  let pongs = await getPongs()
   response.send(`${stringToSend} \r\n Ping / Pongs: ${pongs}`)
 })
 
