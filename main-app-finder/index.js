@@ -9,8 +9,8 @@ const pathTologs = path.join(directory, 'logs.txt')
 const getPongs = async() => {
   try {
     pong = await axios.get('http://pingpong-svc/pingpong')
-    console.log(pong)
-    return pong
+    console.log(pong.data.counts)
+    return pong.data.counts
   } catch (error) {
     console.log(error)
   }
