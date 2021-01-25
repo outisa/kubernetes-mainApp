@@ -1,6 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  namespace: mainapp-namespace
   name: dwk-material-ingress
 spec:
   rules:
