@@ -23,7 +23,7 @@ spec:
           env:
             - name: MESSAGE
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: hashgenerator-cm
                   key: MESSAGE
           volumeMounts:
