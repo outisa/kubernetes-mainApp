@@ -27,7 +27,7 @@ setInterval(() => {
     string = generateHash()
   }
   let date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}:${new Date().getMilliseconds()}Z`;
-  const stringToSend = `${date}: ${string}`
+  const stringToSend = `${date}: ${string}\n`
   fs.writeFile(pathToFile, stringToSend, (err) => { 
     if (err) { 
       console.log(err); 

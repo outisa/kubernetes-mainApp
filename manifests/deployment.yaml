@@ -20,6 +20,12 @@ spec:
       containers:
         - name: main-app-finder
           image: outisa/main-application-finder:f4c6935b30caf1028d3b93fedee46082009790b1
+          env:
+            - name: MESSAGE
+              valueFrom:
+                secretKeyRef:
+                  name: hashgenerator-cm
+                  key: MESSAGE
           volumeMounts:
           - name: shared-logs          
             mountPath: /app/files

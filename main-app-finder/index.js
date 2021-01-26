@@ -19,7 +19,9 @@ const getPongs = async() => {
 app.get('/', async (requst, response) => {
   const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
   let pongs = await getPongs()
-  response.send(`${stringToSend} \r\n Ping / Pongs: ${pongs}`)
+  const message = process.env.MESSAGE
+  const string = `${message}\r\n${stringToSend}.\r\nPing / Pongs: ${pongs}`
+  response.send(string)
 })
 
 const PORT = process.env.PORT || 3003
