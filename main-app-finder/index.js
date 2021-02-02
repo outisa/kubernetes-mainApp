@@ -6,19 +6,16 @@ const axios= require('axios')
 const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
 
-const getPongs = async() => {
+app.get('/', async (requst, response) => {
+  const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
+  let pongs = 0  
   try {
     pong = await axios.get('http://pingpong-svc/pingpong')
     console.log(pong.data.counts)
-    return pong.data.counts
+    pongs = pong.data.counts
   } catch (error) {
     console.log(error)
   }
-}
-
-app.get('/', async (requst, response) => {
-  const stringToSend = fs.readFileSync(pathTologs, 'utf-8')
-  let pongs = await getPongs()
   const message = process.env.MESSAGE
 
   response.send(`<div><p>${message}</p><p>${stringToSend}.</p><p>Ping / Pongs: ${pongs}</p></div>`)

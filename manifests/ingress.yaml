@@ -1,8 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: mainapp-namespace
-  name: dwk-material-ingress
+  name: dwk-material-ing
 spec:
   rules:
   - http:
@@ -10,4 +9,4 @@ spec:
       - path: /
         backend:
           serviceName: hashgenerator-svc
-          servicePort: 2345
+          servicePort: 80 
