@@ -9,4 +9,8 @@ spec:
       - path: /
         backend:
           serviceName: hashgenerator-svc
-          servicePort: 80 
+          servicePort: 80
+      - path: /pingpong
+        backend:
+          serviceName: pingpong-svc
+          servicePort: 80     

@@ -18,7 +18,7 @@ spec:
             claimName: logs-claim
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:cc94b325fd1bbba8d847cdb2901822643d749af9
+          image: outisa/main-application-finder:b217116a1c215920d7f4fc52efca1eca83bd304b
           env:
             - name: MESSAGE
               valueFrom:
@@ -29,7 +29,7 @@ spec:
           - name: shared-logs          
             mountPath: /app/files
         - name: main-app-generator
-          image: outisa/main-application-generator:cc94b325fd1bbba8d847cdb2901822643d749af9
+          image: outisa/main-application-generator:b217116a1c215920d7f4fc52efca1eca83bd304b
           volumeMounts:
             - name: shared-logs
               mountPath: /app/files
