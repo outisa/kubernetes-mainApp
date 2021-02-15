@@ -9,10 +9,10 @@ const pathTologs = path.join(directory, 'logs.txt')
 app.get('/healthz', async (requst, response) =>{
   try {
     await axios.get('http://pingpong-svc/pingpong')
-    response.sendStatus(200).end()
+    return response.status(200).end()
   } catch (error) {
     console.log(error)
-    response.sendStatus(500).end()
+    return response.status(500).end()
   }
 
 })

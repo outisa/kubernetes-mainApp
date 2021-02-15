@@ -18,7 +18,7 @@ spec:
             claimName: logs-claim
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:56e87c3249ce2dc2c04311d3d9cac423c38886a4
+          image: outisa/main-application-finder:bcd8864a24cdde75bad02e534dfe733a8e3abe11
           readinessProbe:
             initialDelaySeconds: 10
             periodSeconds: 5

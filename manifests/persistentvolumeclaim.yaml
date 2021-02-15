@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: logs-claim
 spec:
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
   resources:
