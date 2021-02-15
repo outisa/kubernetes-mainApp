@@ -18,7 +18,7 @@ spec:
             claimName: logs-claim
       containers:
         - name: main-app-finder
-          image: outisa/main-application-finder:b217116a1c215920d7f4fc52efca1eca83bd304b
+          image: outisa/main-application-finder:56e87c3249ce2dc2c04311d3d9cac423c38886a4
           readinessProbe:
             initialDelaySeconds: 10
             periodSeconds: 5
@@ -35,7 +35,7 @@ spec:
           - name: shared-logs          
             mountPath: /app/files
         - name: main-app-generator
-          image: outisa/main-application-generator:b217116a1c215920d7f4fc52efca1eca83bd304b
+          image: outisa/main-application-generator:56e87c3249ce2dc2c04311d3d9cac423c38886a4
           volumeMounts:
             - name: shared-logs
               mountPath: /app/files

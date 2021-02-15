@@ -6,7 +6,7 @@ const axios= require('axios')
 const directory = path.join('/', 'app', 'files')
 const pathTologs = path.join(directory, 'logs.txt')
 
-app.get('/healthz', (requst, response) =>{
+app.get('/healthz', async (requst, response) =>{
   try {
     await axios.get('http://pingpong-svc/pingpong')
     response.sendStatus(200).end()
